@@ -1,0 +1,36 @@
+<div>
+  <h1>Books Application</h1>
+
+  <div class="input-container">
+    <input id="newBook" placeholder="Title">
+    <input id="newDesc" placeholder="Description">
+    <input id="newPrice" placeholder="Book Price">
+    <button (click)="addBook()">Add Book</button>
+  </div>
+
+  <div class="book-table-container">
+    <table class="book-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{book.title}}</td>
+          <td>{{book.desc}}</td>
+          <td>{{book.price}}</td>
+          <td>
+            <button (click)="deleteBook(book.id)">Delete Book</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<footer>
+  <p>Created by: Pamintuan, Eljan Joel Y | WD - 302</p>
+</footer>
